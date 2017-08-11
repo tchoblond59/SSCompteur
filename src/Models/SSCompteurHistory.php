@@ -73,7 +73,7 @@ class SSCompteurHistory extends Model
         $now = Carbon::now();
         $year = $now->year;
         $month = $now->month;
-        $avg = DB::select("SELECT SUM(kwh) as kwh, SUM(prix) as prix FROM `sscompteur_history` WHERE sensor_id = 5 AND YEAR(created_at) = ".$year." AND MONTH(created_at) = ".$month." GROUP BY MONTH(created_at)");
+        $avg = DB::select("SELECT SUM(kwh) as kwh, SUM(prix) as prix FROM `sscompteur_history` WHERE sensor_id = ".$sensor_id." AND YEAR(created_at) = ".$year." AND MONTH(created_at) = ".$month." GROUP BY MONTH(created_at)");
         return $avg;
 
     }
