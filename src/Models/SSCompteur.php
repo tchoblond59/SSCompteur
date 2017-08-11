@@ -33,7 +33,7 @@ class SSCompteur extends Sensor
 
     public function onDelete()
     {
-        
+
     }
     public function getJs()
     {
