@@ -20,7 +20,7 @@ class SSCompteurServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->loadViewsFrom(__DIR__.'/views', 'sscompteur');
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        Event::listen('App\Events\MSMessageEvent', 'Tchoblond59\SSCompteur\EventListener\SSCompteurEventListener');
+        Event::listen('App\Events\MSMessageEvent', '\Tchoblond59\SSCompteur\EventListener\SSCompteurEventListener');
     }
 
     /**

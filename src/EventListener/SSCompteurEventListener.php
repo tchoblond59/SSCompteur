@@ -3,7 +3,7 @@
 namespace Tchoblond59\SSCompteur\EventListener;
 
 use App\Events\MSMessageEvent;
-use App\Events\SSCompteurEvent;
+use Tchoblond59\SSCompteur\Events\SSCompteurEvent;
 use App\Sensor;
 use Tchoblond59\SSCompteur\Models\SSCompteurHistory;
 use Illuminate\Queue\InteractsWithQueue;
@@ -29,7 +29,7 @@ class SSCompteurEventListener
      */
     public function handle(MSMessageEvent $event)
     {
-        $sensor = Sensor::where('node_address', '=', $event->message->getNodeId())->where('classname', '=', 'App\Sensors\SSCompteur\SSCompteur')->first();
+        $sensor = Sensor::where('node_address', '=', $event->message->getNodeId())->where('classname', '=', '\Tchoblond59\SSCompteur\Models\SSCompteur')->first();
         if($sensor)
         {
             $sscompteur_history = new SSCompteurHistory();
